@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://t1nc0aj8cph5"]
+
+[ext_resource type="Texture2D" uid="uid://ct6rx5xovsows" path="res://Textures/Enemy.png" id="1_hghv2"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_d155t"]
+size = Vector2(16, 16)
+
+[node name="Enemy" type="Node2D" unique_id=721351756]
+
+[node name="EnemyRB2D" type="RigidBody2D" parent="." unique_id=763105108]
+
+[node name="EnemyCS2D" type="CollisionShape2D" parent="EnemyRB2D" unique_id=1057487536]
+shape = SubResource("RectangleShape2D_d155t")
+debug_color = Color(0.80451715, 0.002414816, 0.99867195, 0.41960785)
+
+[node name="EnemyImage" type="Sprite2D" parent="EnemyRB2D" unique_id=1304784535]
+scale = Vector2(0.02, 0.02)
+texture = ExtResource("1_hghv2")
+hframes = 8

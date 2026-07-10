@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://dmqycdivhlxa"]
+
+[ext_resource type="Texture2D" uid="uid://dtrci5dc0p7vh" path="res://Textures/Bullet.png" id="1_s5lyr"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_m6x6n"]
+size = Vector2(8, 8)
+
+[node name="BulletPlayer" type="Node2D" unique_id=1853737472]
+
+[node name="BulletPRB2D" type="RigidBody2D" parent="." unique_id=1806623482]
+
+[node name="BulletPCS2D" type="CollisionShape2D" parent="BulletPRB2D" unique_id=2069810153]
+shape = SubResource("RectangleShape2D_m6x6n")
+debug_color = Color(0.698083, 0.49378967, 1.92523e-07, 0.41960785)
+
+[node name="BulletPImage" type="Sprite2D" parent="BulletPRB2D" unique_id=212776951]
+scale = Vector2(0.01, 0.01)
+texture = ExtResource("1_s5lyr")

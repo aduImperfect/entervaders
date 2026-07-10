@@ -1,3 +1,8 @@
 [gd_scene format=3 uid="uid://8a8odj4q5jl4"]
 
+[ext_resource type="Script" uid="uid://ddtg5yv7w0ngn" path="res://Scripts/level_gen.gd" id="1_jjgbg"]
+
 [node name="Main" type="Node2D" unique_id=284831494]
+
+[node name="LevelGen" type="Node2D" parent="." unique_id=665873130]
+script = ExtResource("1_jjgbg")
