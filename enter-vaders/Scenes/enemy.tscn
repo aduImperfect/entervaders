@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://t1nc0aj8cph5"]
 
+[ext_resource type="Script" uid="uid://deryen832kq55" path="res://Scripts/enemy_controls.gd" id="1_1f0kj"]
 [ext_resource type="Texture2D" uid="uid://ct6rx5xovsows" path="res://Textures/Enemy.png" id="1_hghv2"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_d155t"]
@@ -11,6 +12,7 @@ size = Vector2(32, 32)
 collision_layer = 68
 collision_mask = 19
 gravity_scale = 0.0
+script = ExtResource("1_1f0kj")
 
 [node name="EnemyCS2D" type="CollisionShape2D" parent="EnemyRB2D" unique_id=1057487536]
 shape = SubResource("RectangleShape2D_d155t")
@@ -20,3 +22,7 @@ debug_color = Color(0.80451715, 0.002414816, 0.99867195, 0.41960785)
 scale = Vector2(0.04, 0.04)
 texture = ExtResource("1_hghv2")
 hframes = 8
+
+[node name="EnemyRC2D" type="RayCast2D" parent="EnemyRB2D" unique_id=1860242005]
+enabled = false
+target_position = Vector2(0, 0)

@@ -1,8 +1,17 @@
 [gd_scene format=3 uid="uid://8a8odj4q5jl4"]
 
 [ext_resource type="Script" uid="uid://ddtg5yv7w0ngn" path="res://Scripts/level_gen.gd" id="1_jjgbg"]
+[ext_resource type="Script" uid="uid://cnaqg4d0iiff" path="res://Scripts/score.gd" id="2_bo1nx"]
 
 [node name="Main" type="Node2D" unique_id=284831494]
 
 [node name="LevelGen" type="Node2D" parent="." unique_id=665873130]
 script = ExtResource("1_jjgbg")
+
+[node name="Score" type="TextEdit" parent="." unique_id=600580005]
+custom_minimum_size = Vector2(100, 100)
+offset_right = 8.0
+offset_bottom = 8.0
+theme_override_font_sizes/font_size = 40
+text = "0"
+script = ExtResource("2_bo1nx")

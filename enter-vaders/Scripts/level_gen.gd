@@ -5,6 +5,7 @@ const LEVEL_SCENE = preload("res://Scenes/level.tscn")
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	ScoreCalculator._reset_player_score()
 	_load_level()
 
 

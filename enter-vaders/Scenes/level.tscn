@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://b5vi4oyjeemj8"]
 
 [ext_resource type="PackedScene" uid="uid://dmjq5wpl3bn5k" path="res://Scenes/wall.tscn" id="1_tumq0"]
+[ext_resource type="Script" uid="uid://ds2ahcbvtrvx1" path="res://Scripts/enemy_type.gd" id="2_81xng"]
 [ext_resource type="PackedScene" uid="uid://t1nc0aj8cph5" path="res://Scenes/enemy.tscn" id="2_k5f4k"]
 [ext_resource type="PackedScene" uid="uid://cijhbwd2sxfw4" path="res://Scenes/player.tscn" id="3_6phgx"]
 
@@ -309,6 +310,7 @@ position = Vector2(975, 550)
 position = Vector2(1000, 550)
 
 [node name="Enemies" type="Node2D" parent="." unique_id=786022183]
+script = ExtResource("2_81xng")
 
 [node name="Enemy1" parent="Enemies" unique_id=721351756 instance=ExtResource("2_k5f4k")]
 position = Vector2(50, 50)

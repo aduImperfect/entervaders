@@ -3,28 +3,32 @@ extends RigidBody2D
 @export var offset : float = 200.0
 
 @export var ray2D : RayCast2D
-@export var bulletRect : Rect2
-@export var bulletDraw : bool
+#@export var bulletRect : Rect2
+#@export var bulletDraw : bool
 
 @export var ray_origin : Vector2
 @export var ray_target : Vector2
 
-@export var hit_position = Vector2.ZERO
-@export var is_hitting = false
+#@export var hit_position = Vector2.ZERO
+#@export var is_hitting = false
 
-@export var bullet_on = false
+@export var bullet_on : bool = false
 
-@export var ray_stay_limit = 0.05
-@export var ray_stay_accumulation = 0.0
+@export var ray_stay_limit : float  = 0.05
+@export var ray_stay_accumulation : float  = 0.0
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	PlayerMgr._reset_player_info()
 	#The 3rdchild is a ray cast 2D node!
 	ray2D = get_child(2)
-	bulletDraw = false
+	#bulletDraw = false
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
+	if PlayerMgr.player_dead:
+		return
+
 	if bullet_on:
 		ray_stay_accumulation += _delta
 		if ray_stay_accumulation > ray_stay_limit:
@@ -47,6 +51,9 @@ func _process(_delta: float) -> void:
 			position.x = 950.0
 
 func _physics_process(_delta: float) -> void:
+	if PlayerMgr.player_dead:
+		return
+
 	if Input.is_action_just_pressed("ui_player_bullet"):
 		#print("Bullet Ray!")
 		perform_node_raycast()
@@ -71,6 +78,14 @@ func perform_node_raycast() -> void:
 	if first_collided_obj:
 		#print("Ray collided with object: ", first_collided_obj)
 		var collisionOwner : Node2D = first_collided_obj.owner
+		if first_collided_obj.name.contains("Enemy"):
+			if collisionOwner.get_index() < 10:
+				ScoreCalculator._add_to_player_score(30)
+			elif collisionOwner.get_index() < 30:
+				ScoreCalculator._add_to_player_score(20)
+			else:
+				ScoreCalculator._add_to_player_score(10)
+		
 		collisionOwner.remove_child(first_collided_obj)
 
 #func perform_immediate_raycast() -> void:
