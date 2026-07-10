@@ -3,16 +3,17 @@
 [ext_resource type="Texture2D" uid="uid://dtrci5dc0p7vh" path="res://Textures/Bullet.png" id="1_mqx58"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_m6x6n"]
-size = Vector2(8, 8)
+size = Vector2(16, 16)
 
 [node name="BulletEnemy" type="Node2D" unique_id=947947969]
 
 [node name="BulletERB2D" type="RigidBody2D" parent="." unique_id=826399887]
+gravity_scale = 0.0
 
 [node name="BulletECS2D" type="CollisionShape2D" parent="BulletERB2D" unique_id=780487999]
 shape = SubResource("RectangleShape2D_m6x6n")
 debug_color = Color(0.6684034, 0.5106022, 0, 0.41960785)
 
 [node name="BulletEImage" type="Sprite2D" parent="BulletERB2D" unique_id=1968447388]
-scale = Vector2(0.01, 0.01)
+scale = Vector2(0.02, 0.02)
 texture = ExtResource("1_mqx58")

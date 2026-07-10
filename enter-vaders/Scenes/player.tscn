@@ -3,16 +3,17 @@
 [ext_resource type="Texture2D" uid="uid://bddrjnwntmt4i" path="res://Textures/Player.png" id="1_v0iea"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_m6x6n"]
-size = Vector2(16, 16)
+size = Vector2(32, 32)
 
 [node name="Player" type="Node2D" unique_id=1529246231]
 
-[node name="PlayerCB2D" type="CharacterBody2D" parent="." unique_id=1593599245]
+[node name="PlayerRB2D" type="RigidBody2D" parent="." unique_id=1458352723]
+gravity_scale = 0.0
 
-[node name="PlayerCS2D" type="CollisionShape2D" parent="PlayerCB2D" unique_id=2133624043]
+[node name="PlayerCS2D" type="CollisionShape2D" parent="PlayerRB2D" unique_id=2133624043]
 shape = SubResource("RectangleShape2D_m6x6n")
 debug_color = Color(0.63496304, 0.3427195, 1, 0.41960785)
 
-[node name="PlayerImage" type="Sprite2D" parent="PlayerCB2D" unique_id=1079561718]
-scale = Vector2(0.02, 0.02)
+[node name="PlayerImage" type="Sprite2D" parent="PlayerRB2D" unique_id=1079561718]
+scale = Vector2(0.04, 0.04)
 texture = ExtResource("1_v0iea")
