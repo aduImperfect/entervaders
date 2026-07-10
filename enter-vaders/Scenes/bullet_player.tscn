@@ -8,6 +8,8 @@ size = Vector2(16, 16)
 [node name="BulletPlayer" type="Node2D" unique_id=1853737472]
 
 [node name="BulletPRB2D" type="RigidBody2D" parent="." unique_id=1806623482]
+collision_layer = 2
+collision_mask = 28
 gravity_scale = 0.0
 
 [node name="BulletPCS2D" type="CollisionShape2D" parent="BulletPRB2D" unique_id=2069810153]

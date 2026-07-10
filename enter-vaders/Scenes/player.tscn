@@ -8,6 +8,7 @@ size = Vector2(32, 32)
 [node name="Player" type="Node2D" unique_id=1529246231]
 
 [node name="PlayerRB2D" type="RigidBody2D" parent="." unique_id=1458352723]
+collision_mask = 12
 gravity_scale = 0.0
 
 [node name="PlayerCS2D" type="CollisionShape2D" parent="PlayerRB2D" unique_id=2133624043]

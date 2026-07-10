@@ -8,6 +8,8 @@ size = Vector2(16, 16)
 [node name="BulletEnemy" type="Node2D" unique_id=947947969]
 
 [node name="BulletERB2D" type="RigidBody2D" parent="." unique_id=826399887]
+collision_layer = 8
+collision_mask = 19
 gravity_scale = 0.0
 
 [node name="BulletECS2D" type="CollisionShape2D" parent="BulletERB2D" unique_id=780487999]

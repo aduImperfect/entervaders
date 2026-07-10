@@ -8,6 +8,8 @@ size = Vector2(16, 16)
 [node name="Wall" type="Node2D" unique_id=346481664]
 
 [node name="WallA2D" type="Area2D" parent="." unique_id=467487780]
+collision_layer = 16
+collision_mask = 10
 
 [node name="WallCS2D" type="CollisionShape2D" parent="WallA2D" unique_id=1621825525]
 shape = SubResource("RectangleShape2D_m6x6n")
