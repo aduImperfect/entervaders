@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://b5vi4oyjeemj8"]
 
 [ext_resource type="PackedScene" uid="uid://dmjq5wpl3bn5k" path="res://Scenes/wall.tscn" id="1_tumq0"]
+[ext_resource type="PackedScene" uid="uid://t1nc0aj8cph5" path="res://Scenes/enemy.tscn" id="2_k5f4k"]
 
 [node name="Level" type="Node2D" unique_id=1146844964]
 
@@ -303,3 +304,6 @@ position = Vector2(975, 550)
 
 [node name="Wall100" parent="." unique_id=206381507 instance=ExtResource("1_tumq0")]
 position = Vector2(1000, 550)
+
+[node name="Enemy1" parent="." unique_id=721351756 instance=ExtResource("2_k5f4k")]
+position = Vector2(150, 100)
